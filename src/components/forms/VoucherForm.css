@@ -1,0 +1,707 @@
+.voucher-form {
+  background: var(--card-bg-start);
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.02), 0 1px 3px rgba(16, 24, 40, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+}
+
+.form-card-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--card-border);
+  background: linear-gradient(90deg, #ffffff 0%, var(--bg-secondary) 100%);
+}
+
+.form-card-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.form-card-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.form-card-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.form-header-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: white;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  min-height: 38px;
+}
+
+.form-header-btn-icon {
+  padding: 8px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+}
+
+.form-header-btn:hover {
+  background: var(--bg-secondary);
+}
+
+.form-header-btn svg {
+  flex-shrink: 0;
+}
+
+.voucher-form > section,
+.voucher-form > .form-actions {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.voucher-form > section:first-of-type {
+  padding-top: 24px;
+}
+
+.voucher-form > .form-actions {
+  padding-bottom: 32px;
+}
+
+.form-section {
+  margin-bottom: 38px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  padding-bottom: 0;
+  border-bottom: none;
+  display: block;
+}
+
+.section-help {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 44px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 2px rgba(11, 92, 255, 0.2);
+  background: var(--input-bg-focus);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Expense Cards - New Design */
+.expense-card {
+  background: var(--card-bg-start);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.expense-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-color: var(--card-border-hover);
+}
+
+.expense-card-header {
+  background: var(--bg-secondary);
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.expense-card-number {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.expense-card-remove {
+  width: 32px;
+  height: 32px;
+  background: var(--accent-danger);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.expense-card-remove:hover {
+  background: var(--accent-danger-hover);
+}
+
+.expense-card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expense-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.expense-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.expense-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 44px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.expense-input:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 2px rgba(11, 92, 255, 0.2);
+  background: var(--input-bg-focus);
+}
+
+.expense-input-amount {
+  max-width: 200px;
+}
+
+.btn-add-expense {
+  width: 100%;
+  padding: 12px 20px;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  min-height: 48px;
+}
+
+.btn-add-expense:hover {
+  background: var(--accent-primary-hover);
+}
+
+.expense-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  font-size: 17px;
+  margin-top: 12px;
+  color: var(--text-primary);
+}
+
+.expense-total strong {
+  font-size: 19px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.settlement-info {
+  margin-top: 20px;
+  padding: 18px;
+  background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%);
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.9;
+  border: 2px solid #f6e05e;
+  box-shadow: 0 2px 8px rgba(246, 224, 94, 0.3);
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.btn-reset {
+  padding: 14px 38px;
+  background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  min-height: 54px;
+  min-width: 190px;
+  box-shadow: 0 4px 12px rgba(113, 128, 150, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  box-shadow: 0 6px 16px rgba(113, 128, 150, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .voucher-form {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .voucher-form {
+    margin: 0 8px;
+    border-radius: 6px;
+  }
+  
+  .wizard-steps {
+    padding: 16px 20px 12px;
+  }
+  
+  .wizard-progress-line {
+    left: 38px;
+    right: 38px;
+  }
+  
+  .wizard-step-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+  
+  .wizard-step-header {
+    padding: 0 20px 16px;
+  }
+  
+  .wizard-step-header-title {
+    font-size: 15px;
+  }
+  
+  .wizard-step-header-desc {
+    font-size: 12px;
+  }
+  
+  .form-card-header {
+    padding: 18px 20px;
+  }
+  
+  .form-card-header-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .form-header-btn {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .form-header-btn-text {
+    display: inline;
+  }
+  
+  .form-card-title {
+    font-size: 20px;
+  }
+  
+  .form-card-subtitle {
+    font-size: 13px;
+  }
+  
+  .voucher-form > section,
+  .voucher-form > .form-actions {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .voucher-form > section:first-of-type {
+    padding-top: 18px;
+  }
+  
+  .voucher-form > .form-actions {
+    padding-bottom: 24px;
+  }
+  
+  .section-heading {
+    font-size: 20px;
+  }
+  
+  .section-help {
+    font-size: 14px;
+  }
+  
+  .form-group label {
+    font-size: 16px;
+  }
+  
+  .expense-card-header {
+    padding: 10px 14px;
+  }
+  
+  .expense-card-number {
+    font-size: 15px;
+  }
+  
+  .expense-card-remove {
+    font-size: 14px;
+    padding: 6px 12px;
+    min-height: 36px;
+  }
+  
+  .expense-card-body {
+    padding: 14px;
+    gap: 12px;
+  }
+  
+  .expense-label {
+    font-size: 15px;
+  }
+  
+  .expense-input {
+    font-size: 16px;
+    padding: 12px;
+  }
+  
+  .expense-input-amount {
+    max-width: 100%;
+  }
+  
+  .btn-add-expense {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+  
+  .expense-total {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    font-size: 17px;
+  }
+  
+  .expense-total strong {
+    font-size: 22px;
+  }
+  
+  .settlement-info {
+    font-size: 15px;
+  }
+  
+  .btn-reset {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .voucher-form {
+    padding: 0;
+    margin: 0 4px;
+  }
+  
+  .wizard-steps {
+    padding: 14px 16px 10px;
+  }
+  
+  .wizard-steps::before {
+    left: 43px;
+    right: 43px;
+  }
+  
+  .wizard-step-circle {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .wizard-step-header {
+    padding: 0 16px 14px;
+  }
+  
+  .wizard-step-header-title {
+    font-size: 14px;
+  }
+  
+  .wizard-step-header-desc {
+    font-size: 11px;
+  }
+  
+  .form-title {
+    font-size: 24px;
+  }
+  
+  .expense-card-body {
+    padding: 12px;
+  }
+  
+  .expense-card-header {
+    padding: 10px 12px;
+  }
+}
+
+.wizard-steps {
+  display: flex;
+  padding: 24px 32px 16px;
+  gap: 0;
+  align-items: center;
+  position: relative;
+}
+
+.wizard-steps-wrapper {
+  position: relative;
+}
+
+.wizard-progress-line {
+  position: absolute;
+  top: 50%;
+  left: 52px;
+  right: 52px;
+  height: 2px;
+  background: var(--card-border);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.wizard-step {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+}
+
+.wizard-step.active {
+  opacity: 1;
+}
+
+.wizard-step.active .wizard-step-circle {
+  background: #e2e8f0;
+  color: var(--text-primary);
+  border-color: #94a3b8;
+}
+
+.wizard-step.current .wizard-step-circle {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.wizard-step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: var(--text-secondary);
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.wizard-step-header {
+  padding: 0 32px 20px;
+  text-align: center;
+}
+
+.wizard-step-header-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.wizard-step-header-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.wizard-navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px 32px;
+  gap: 12px;
+  border-top: 1px solid var(--card-border);
+  margin-top: 24px;
+}
+
+.wizard-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.wizard-btn-back {
+  background: white;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+}
+
+.wizard-btn-back:hover:not(:disabled) {
+  background: var(--bg-secondary);
+}
+
+.wizard-btn-back:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.wizard-btn-next {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.wizard-btn-next:hover {
+  background: var(--accent-primary-hover);
+}
+
+.wizard-btn-reset {
+  background: white;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+}
+
+.wizard-btn-reset:hover {
+  background: var(--bg-secondary);
+}
+
+.sticky-total-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sticky-total-bar {
+    display: flex;
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(11, 92, 255, 0.4);
+    gap: 12px;
+    align-items: center;
+    font-size: 15px;
+    z-index: 90;
+    white-space: nowrap;
+  }
+  
+  .sticky-total-bar strong {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.voucher-form > section {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.voucher-form > section:first-of-type {
+  padding-top: 24px;
+}
