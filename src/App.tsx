@@ -9,11 +9,11 @@ import Toast from './components/common/Toast';
 import './App.css';
 
 function App() {
-  const [isGenerating, setIsGenerating] = useState(false);
+  const [, setIsGenerating] = useState(false);
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info' } | null>(null);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const [showInstallPrompt, setShowInstallPrompt] = useState(false);
+  const [, setShowInstallPrompt] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [draftSaved, setDraftSaved] = useState(false);
   const [showInstallSheet, setShowInstallSheet] = useState(false);
