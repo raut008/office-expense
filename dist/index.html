@@ -15,14 +15,5 @@
   <link rel="manifest" href="/office-expense/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/office-expense/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
-    <script>
-      (function() {
-        var redirect = sessionStorage.getItem('redirect');
-        if (redirect) {
-          sessionStorage.removeItem('redirect');
-          history.replaceState(null, '', '/office-expense/' + redirect);
-        }
-      })();
-    </script>
   </body>
 </html>

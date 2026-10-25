@@ -13,15 +13,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      (function() {
-        var redirect = sessionStorage.getItem('redirect');
-        if (redirect) {
-          sessionStorage.removeItem('redirect');
-          history.replaceState(null, '', '/office-expense/' + redirect);
-        }
-      })();
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
