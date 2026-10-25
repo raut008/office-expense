@@ -9,12 +9,12 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'pwa-192x192.png', 'pwa-512x512.png'],
       manifest: {
         name: 'Office Expense Voucher',
         short_name: 'Expense Voucher',
         description: 'Generate office expense vouchers in PDF format',
-        theme_color: '#ffffff',
+        theme_color: '#0b5cff',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/office-expense/',
