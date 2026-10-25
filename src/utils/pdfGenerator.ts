@@ -2,6 +2,52 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { VoucherData } from '../types/voucher';
 
+export async function generatePDFBlob(_voucherData: VoucherData, elementId: string): Promise<Blob> {
+  const element = document.getElementById(elementId);
+  let canvas: HTMLCanvasElement;
+  if (!element) {
+    const allPreviews = document.querySelectorAll('.voucher-preview');
+    if (allPreviews.length === 0) {
+      throw new Error('Voucher preview element not found');
+    }
+    canvas = await html2canvas(allPreviews[allPreviews.length - 1] as HTMLElement, {
+      scale: 2,
+      useCORS: true,
+      logging: false,
+    });
+  } else {
+    canvas = await html2canvas(element, {
+      scale: 2,
+      useCORS: true,
+      logging: false,
+    });
+  }
+
+  const imgData = canvas.toDataURL('image/png');
+  const pdf = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4',
+  });
+
+  const imgWidth = 210;
+  const pageHeight = 297;
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  if (imgHeight <= pageHeight) {
+    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+  } else {
+    const scale = pageHeight / imgHeight;
+    const scaledWidth = imgWidth * scale;
+    const scaledHeight = pageHeight;
+    const xOffset = (imgWidth - scaledWidth) / 2;
+    pdf.addImage(imgData, 'PNG', xOffset, 0, scaledWidth, scaledHeight);
+  }
+
+  const blob = pdf.output('blob');
+  return blob;
+}
+
 export async function generatePDF(voucherData: VoucherData, elementId: string): Promise<void> {
   const element = document.getElementById(elementId);
   if (!element) {

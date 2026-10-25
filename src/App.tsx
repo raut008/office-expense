@@ -49,21 +49,41 @@ function App() {
     const handleSharePdf = async () => {
       try {
         setIsGenerating(true);
-        await generatePDF(voucherData, 'voucher-preview-hidden');
+        const { generatePDFBlob } = await import('./utils/pdfGenerator');
+        const blob = await generatePDFBlob(voucherData, 'voucher-preview-hidden');
+        const file = new File([blob], `Office_Expense_Voucher_${voucherData.voucherDate.replace(/\//g, '-')}.pdf`, { type: 'application/pdf' });
         showToast('PDF generated', 'success');
+        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+          try {
+            await navigator.share({
+              title: 'Office Expense Voucher',
+              text: `Office Expense Voucher - ${voucherData.voucherDate}`,
+              files: [file]
+            });
+            return;
+          } catch {
+            // User cancelled or not supported
+          }
+        }
         if (navigator.share) {
           try {
             await navigator.share({
               title: 'Office Expense Voucher',
               text: `Office Expense Voucher - ${voucherData.voucherDate}`,
             });
+            return;
           } catch {
             // User cancelled or not supported
           }
-        } else {
-          const text = encodeURIComponent(`Office Expense Voucher - ${voucherData.voucherDate}`);
-          window.open(`https://wa.me/?text=${text}`, '_blank');
         }
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Office_Expense_Voucher_${voucherData.voucherDate.replace(/\//g, '-')}.pdf`;
+        a.click();
+        URL.revokeObjectURL(url);
+        const text = encodeURIComponent(`Office Expense Voucher - ${voucherData.voucherDate}`);
+        window.open(`https://wa.me/?text=${text}`, '_blank');
       } catch (error) {
         console.error('Error:', error);
         showToast('Error generating PDF', 'error');
